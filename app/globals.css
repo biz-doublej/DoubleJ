@@ -97,6 +97,34 @@ section + section { border-top: 1px solid var(--border); }
 /* utility */
 .muted { color: var(--muted); }
 
+/* About page: future-realistic hero */
+.about-hero { position: relative; padding: 56px 0 24px; background:
+  radial-gradient(800px 280px at 10% -20%, color-mix(in oklab, var(--brand) 28%, transparent), transparent 60%),
+  radial-gradient(800px 280px at 90% -25%, color-mix(in oklab, var(--accent) 20%, transparent), transparent 60%);
+}
+.about-hero::after { content:""; position:absolute; inset:0; pointer-events:none; background:
+  linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,0) 20%),
+  repeating-linear-gradient(90deg, rgba(255,255,255,.04) 0 1px, transparent 1px 3px);
+  opacity:.35;
+}
+.about-grid { display: grid; grid-template-columns: 1fr; gap: 20px; align-items: center; }
+@media (min-width: 960px) { .about-grid { grid-template-columns: 1.4fr 1fr; gap: 28px; } }
+
+/* Glass / holo utilities */
+.glass { border: 1px solid color-mix(in oklab, var(--border) 80%, var(--brand)); border-radius: 16px; padding: 16px; background: linear-gradient(180deg, color-mix(in oklab, var(--panel) 94%, transparent), color-mix(in oklab, var(--panel) 100%, var(--bg))); position: relative; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,.35); }
+.glass::before { content:""; position:absolute; inset:-20%; background: radial-gradient(400px 120px at -10% -20%, rgba(255,255,255,.14), transparent 60%); pointer-events:none; transform: translate3d(0,0,0); }
+.holo::after { content:""; position:absolute; inset:0; background: linear-gradient(120deg, rgba(255,255,255,.08), transparent 30% 70%, rgba(255,255,255,.06)); mix-blend-mode: screen; animation: holoSweep 6s ease-in-out infinite; pointer-events:none; }
+@keyframes holoSweep { 0%,100% { opacity:.5; transform: translateX(-10%); } 50% { opacity:.9; transform: translateX(10%); } }
+.tilt { transition: transform .2s ease; will-change: transform; }
+.tilt:hover { transform: perspective(800px) rotateX(1.5deg) rotateY(-2deg) translateY(-2px); }
+
+/* Timeline */
+.timeline { position: relative; margin-top: 10px; padding-left: 22px; }
+.timeline::before { content:""; position:absolute; left: 10px; top: 0; bottom: 0; width: 2px; background: linear-gradient(180deg, color-mix(in oklab, var(--brand) 40%, transparent), color-mix(in oklab, var(--accent) 30%, transparent)); box-shadow: 0 0 18px color-mix(in oklab, var(--brand) 25%, transparent); }
+.tl-item { position: relative; margin: 14px 0; }
+.tl-dot { position: absolute; left: -2px; top: 2px; width: 12px; height: 12px; border-radius: 50%; background: color-mix(in oklab, var(--brand-strong) 70%, var(--accent)); box-shadow: 0 0 0 3px color-mix(in oklab, var(--brand) 15%, transparent), 0 6px 16px color-mix(in oklab, var(--brand) 30%, transparent); }
+.tl-content { padding-left: 18px; }
+
 /* Liquid background: future-y glass/gel effect */
 .liquid-bg { position: fixed; inset: -10vh -10vw; z-index: -1; pointer-events: none; overflow: hidden; filter: saturate(120%); }
 .blob { position: absolute; width: 48vmin; height: 48vmin; border-radius: 50%;
