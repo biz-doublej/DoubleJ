@@ -161,3 +161,26 @@ section + section { border-top: 1px solid var(--border); }
   .header { backdrop-filter: blur(12px) saturate(120%); -webkit-backdrop-filter: blur(12px) saturate(120%); }
   .footer { backdrop-filter: blur(8px) saturate(120%); -webkit-backdrop-filter: blur(8px) saturate(120%); background: color-mix(in oklab, var(--bg) 85%, transparent); }
 }
+
+/* Stats */
+.stat-cards { display: grid; grid-template-columns: repeat(12, 1fr); gap: 16px; }
+.stat { grid-column: span 12; border: 1px solid var(--border); background: linear-gradient(180deg, color-mix(in oklab, var(--panel) 98%, transparent), color-mix(in oklab, var(--panel) 100%, var(--bg))); border-radius: 14px; padding: 14px; box-shadow: var(--shadow-1); }
+.stat-k { font-weight: 700; color: var(--fg); letter-spacing: -0.01em; }
+.stat-l { color: var(--muted); font-size: 13px; margin-top: 4px; }
+@media (min-width: 720px) { .stat { grid-column: span 4; } }
+
+/* Tiles (vision) */
+.tiles { display: grid; grid-template-columns: repeat(12, 1fr); gap: 16px; }
+.tile { grid-column: span 12; border: 1px solid var(--border); border-radius: 14px; padding: 16px; background: linear-gradient(180deg, color-mix(in oklab, var(--panel) 96%, transparent), color-mix(in oklab, var(--panel) 100%, var(--bg))); box-shadow: var(--shadow-1); transition: transform .15s ease; }
+.tile:hover { transform: translateY(-2px); }
+@media (min-width: 720px) { .tile { grid-column: span 4; } }
+
+/* Brand showcase */
+.brand-grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 16px; }
+.brand-card { grid-column: span 12; border: 1px solid var(--border); border-radius: 16px; padding: 16px; background: linear-gradient(180deg, color-mix(in oklab, var(--panel) 95%, transparent), color-mix(in oklab, var(--panel) 100%, var(--bg))); position: relative; transition: transform .15s ease, box-shadow .2s, border-color .2s; cursor: pointer; }
+.brand-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-1); }
+.brand-card.active { border-color: color-mix(in oklab, var(--brand) 40%, var(--border)); box-shadow: 0 10px 28px color-mix(in oklab, var(--brand) 20%, transparent); }
+.brand-head { display: flex; gap: 10px; align-items: center; justify-content: flex-start; }
+.brand-mark { width: 28px; height: 28px; display: grid; place-items: center; border-radius: 50%; background: radial-gradient(60% 60% at 50% 35%, color-mix(in oklab, var(--brand-strong) 30%, var(--accent)), transparent 70%); box-shadow: 0 0 0 1px var(--border), 0 8px 18px color-mix(in oklab, var(--brand) 25%, transparent); color: white; font-size: 12px; }
+.brand-detail { margin-top: 12px; border-top: 1px solid var(--border); padding-top: 10px; }
+.brand-detail ul { margin: 0 0 10px; padding-left: 18px; color: var(--muted); }
