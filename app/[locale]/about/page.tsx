@@ -42,6 +42,48 @@ export default async function AboutPage({ params }: { params: { locale: string }
         </div>
       </section>
 
+      {/* Brands section (ko locale content as provided) */}
+      {params.locale === 'ko' && (
+        <section>
+          <div className="container">
+            <h2>주요 브랜드</h2>
+            <ul className="cards">
+              <li className="card">
+                <h3>Oniv</h3>
+                <p><strong>Warm Commerce, Modern Lifestyle</strong><br />
+                Oniv는 단순한 쇼핑몰이 아니라, 고객의 취향을 먼저 이해하고 따뜻한 경험을 제공하는 글로벌 이커머스 플랫폼입니다.</p>
+                <ul>
+                  <li>Home & Lifestyle 중심 인테리어, 생활용품, 디자인 제품 드롭쉬핑</li>
+                  <li>AI 기반 큐레이션으로 개인 맞춤형 추천 제공</li>
+                  <li>미국 시장을 시작으로 캐나다, 유럽으로 확장 예정</li>
+                </ul>
+              </li>
+              <li className="card">
+                <h3>Timora AI</h3>
+                <p><strong>Campus Scheduling AI</strong><br />
+                Timora는 대학의 수강신청 및 시간표 배정을 혁신하는 AI 플랫폼입니다.</p>
+                <ul>
+                  <li>AI 기반 자동 시간표 편성</li>
+                  <li>공실 활용 분석 및 시각화 대시보드</li>
+                  <li>외부 대여·결제 모듈 연동</li>
+                  <li>Explainable AI로 투명한 조정 가능</li>
+                </ul>
+              </li>
+              <li className="card">
+                <h3>Oniv AI</h3>
+                <p><strong>Personalized Shopping Recommender</strong><br />
+                Oniv AI는 Oniv 전용 AI 추천 시스템이자, 외부 파트너에게 제공 가능한 SaaS 플랫폼입니다.</p>
+                <ul>
+                  <li>고객의 검색·구매·체류 데이터를 기반으로 취향 파악</li>
+                  <li>개인 맞춤형 상품 및 프로모션 자동화</li>
+                  <li>다국어 지원으로 글로벌 맞춤 경험 제공</li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </section>
+      )}
+
       <section>
         <div className="container">
           <h2>{t.pages.about.values}</h2>
@@ -68,6 +110,23 @@ export default async function AboutPage({ params }: { params: { locale: string }
           </div>
         </div>
       </section>
+
+      {/* Company overview section (ko) */}
+      {params.locale === 'ko' && (
+        <section>
+          <div className="container">
+            <h2>회사 개요</h2>
+            <ul className="facts">
+              <li className="fact"><strong>회사명</strong><span>DoubleJ</span></li>
+              <li className="fact"><strong>창업자</strong><span>Gabriel (KR), William (US)</span></li>
+              <li className="fact"><strong>브랜드</strong><span>Oniv, Timora, Oniv AI, Pawday(추후 런칭 예정)</span></li>
+              <li className="fact"><strong>본사</strong><span>Philadelphia, USA</span></li>
+              <li className="fact"><strong>개발 오피스</strong><span>Seoul, KR</span></li>
+              <li className="fact"><strong>핵심 가치</strong><span>Global · Innovation · Trust</span></li>
+            </ul>
+          </div>
+        </section>
+      )}
     </>
   );
 }
