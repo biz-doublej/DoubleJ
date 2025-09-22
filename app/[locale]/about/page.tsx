@@ -1,5 +1,6 @@
 import { getDictionary } from "@/lib/i18n/dictionaries";
-import Teams from "@/components/Teams";
+import ValuesPillars from "@/components/ValuesPillars";
+import TeamsShowcase from "@/components/TeamsShowcase";
 import StatsRow from "@/components/StatsRow";
 import BrandShowcase from "@/components/BrandShowcase";
 import VisionTiles from "@/components/VisionTiles";
@@ -52,14 +53,13 @@ export default async function AboutPage({ params }: { params: { locale: string }
 
       <BrandShowcase locale={params.locale} />
 
+      <ValuesPillars locale={params.locale} />
+
+      <TeamsShowcase teams={t.pages.about.teams as any} locale={params.locale} />
+
       <section>
         <div className="container">
-          <h2>{t.pages.about.values}</h2>
-          <p>Global / Innovation / Trust</p>
-
-          <Teams teams={t.pages.about.teams as any} title={t.pages.about.teamsTitle} />
-
-          <h3 style={{marginTop: 18}}>{t.pages.about.history}</h3>
+          <h3>{t.pages.about.history}</h3>
           <div className="timeline" aria-label="Company timeline">
             <div className="tl-item">
               <div className="tl-dot" />

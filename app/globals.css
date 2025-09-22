@@ -184,3 +184,18 @@ section + section { border-top: 1px solid var(--border); }
 .brand-mark { width: 28px; height: 28px; display: grid; place-items: center; border-radius: 50%; background: radial-gradient(60% 60% at 50% 35%, color-mix(in oklab, var(--brand-strong) 30%, var(--accent)), transparent 70%); box-shadow: 0 0 0 1px var(--border), 0 8px 18px color-mix(in oklab, var(--brand) 25%, transparent); color: white; font-size: 12px; }
 .brand-detail { margin-top: 12px; border-top: 1px solid var(--border); padding-top: 10px; }
 .brand-detail ul { margin: 0 0 10px; padding-left: 18px; color: var(--muted); }
+
+/* Values pillars */
+.pillars { display: grid; grid-template-columns: repeat(12, 1fr); gap: 16px; }
+.pillar { grid-column: span 12; border-radius: 16px; padding: 16px; }
+.pillar-head { display: flex; align-items: center; gap: 10px; margin-bottom: 6px; }
+.pillar-icon { width: 28px; height: 28px; display: grid; place-items: center; border-radius: 50%; background: color-mix(in oklab, var(--brand) 20%, transparent); box-shadow: 0 0 0 1px var(--border) inset; }
+@media (min-width: 720px) { .pillar { grid-column: span 4; } }
+
+/* Team tabs */
+.tabs { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 12px; }
+.tab { border: 1px solid var(--border); background: color-mix(in oklab, var(--panel) 94%, transparent); color: var(--fg); border-radius: 999px; padding: 8px 12px; cursor: pointer; }
+.tab.active { background: color-mix(in oklab, var(--panel) 78%, var(--brand)); border-color: color-mix(in oklab, var(--brand) 30%, var(--border)); box-shadow: 0 6px 18px color-mix(in oklab, var(--brand) 18%, transparent); }
+.team-mark { display: inline-grid; place-items: center; width: 18px; height: 18px; margin-right: 6px; border-radius: 50%; background: radial-gradient(60% 60% at 50% 35%, color-mix(in oklab, var(--brand-strong) 30%, var(--accent)), transparent 70%); color: #fff; font-size: 10px; }
+.team-panel-split { display: grid; grid-template-columns: 1fr; gap: 16px; }
+@media (min-width: 720px) { .team-panel-split { grid-template-columns: 1.2fr 1fr; } }
