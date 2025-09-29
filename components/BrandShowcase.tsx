@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Reveal from "@/components/Reveal";
 
 type Props = { locale: string };
 
@@ -99,41 +100,42 @@ export default function BrandShowcase({ locale }: Props) {
     <section>
       <div className="container">
         <div className="brand-grid">
-          {brands.map((b) => {
+          {brands.map((b, i) => {
             const is = active === b.key;
             return (
-              <div
-                key={b.key}
-                className={`brand-card${is ? ' active' : ''}`}
-                role="button"
-                tabIndex={0}
-                onClick={() => setActive(b.key)}
-                onKeyDown={(e) => e.key === 'Enter' && setActive(b.key)}
-                aria-expanded={is}
-              >
-                <div className="brand-head">
-                  <div className="brand-mark" aria-hidden>◎</div>
-                  <div>
-                    <strong>{b.name}</strong>
-                    <div className="muted" style={{fontSize:13}}>{b.tagline}</div>
+              <Reveal key={b.key} variant="up" delay={i * 90}>
+                <div
+                  className={`brand-card${is ? ' active' : ''}`}
+                  role="button"
+                  tabIndex={0}
+                  onClick={() => setActive(b.key)}
+                  onKeyDown={(e) => e.key === 'Enter' && setActive(b.key)}
+                  aria-expanded={is}
+                >
+                  <div className="brand-head">
+                    <div className="brand-mark" aria-hidden>◎</div>
+                    <div>
+                      <strong>{b.name}</strong>
+                      <div className="muted" style={{fontSize:13}}>{b.tagline}</div>
+                    </div>
                   </div>
-                </div>
-                <div className="chips" style={{marginTop:10}}>
-                  {b.chips.map((c) => (
-                    <span key={c} className="chip">{c}</span>
-                  ))}
-                </div>
-                {is && (
-                  <div className="brand-detail">
-                    <ul>
-                      {b.details.map((d) => (
-                        <li key={d}>{d}</li>
-                      ))}
-                    </ul>
-                    <a className="btn" href={`/${locale}/products`}>{cta}</a>
+                  <div className="chips" style={{marginTop:10}}>
+                    {b.chips.map((c) => (
+                      <span key={c} className="chip">{c}</span>
+                    ))}
                   </div>
-                )}
-              </div>
+                  {is && (
+                    <div className="brand-detail">
+                      <ul>
+                        {b.details.map((d) => (
+                          <li key={d}>{d}</li>
+                        ))}
+                      </ul>
+                      <a className="btn" href={`/${locale}/products`}>{cta}</a>
+                    </div>
+                  )}
+                </div>
+              </Reveal>
             );
           })}
         </div>
@@ -141,4 +143,3 @@ export default function BrandShowcase({ locale }: Props) {
     </section>
   );
 }
-

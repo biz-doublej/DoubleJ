@@ -1,3 +1,5 @@
+import Reveal from "@/components/Reveal";
+
 type Props = { locale: string };
 
 export default function StatsRow({ locale }: Props) {
@@ -12,19 +14,24 @@ export default function StatsRow({ locale }: Props) {
 
   return (
     <div className="stat-cards">
-      <div className="stat">
-        <div className="stat-k">2025.08</div>
-        <div className="stat-l">{t.founded}</div>
-      </div>
-      <div className="stat">
-        <div className="stat-k">Philadelphia, USA</div>
-        <div className="stat-l">{t.hq}</div>
-      </div>
-      <div className="stat">
-        <div className="stat-k">Seoul, KR</div>
-        <div className="stat-l">{t.dev}</div>
-      </div>
+      <Reveal variant="up" delay={0}>
+        <div className="stat">
+          <div className="stat-k">2025.08</div>
+          <div className="stat-l">{t.founded}</div>
+        </div>
+      </Reveal>
+      <Reveal variant="up" delay={90}>
+        <div className="stat">
+          <div className="stat-k">Philadelphia, USA</div>
+          <div className="stat-l">{t.hq}</div>
+        </div>
+      </Reveal>
+      <Reveal variant="up" delay={180}>
+        <div className="stat">
+          <div className="stat-k">Seoul, KR</div>
+          <div className="stat-l">{t.dev}</div>
+        </div>
+      </Reveal>
     </div>
   );
 }
-

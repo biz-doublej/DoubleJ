@@ -1,3 +1,5 @@
+import Reveal from "@/components/Reveal";
+
 type Props = { locale: string };
 
 export default function VisionTiles({ locale }: Props) {
@@ -39,21 +41,26 @@ export default function VisionTiles({ locale }: Props) {
       <div className="container">
         <h2>{t.title}</h2>
         <div className="tiles">
-          <div className="tile">
-            <div className="badge">{t.short}</div>
-            <p>{t.shortP}</p>
-          </div>
-          <div className="tile">
-            <div className="badge">{t.mid}</div>
-            <p>{t.midP}</p>
-          </div>
-          <div className="tile">
-            <div className="badge">{t.long}</div>
-            <p>{t.longP}</p>
-          </div>
+          <Reveal variant="up" delay={0}>
+            <div className="tile">
+              <div className="badge">{t.short}</div>
+              <p>{t.shortP}</p>
+            </div>
+          </Reveal>
+          <Reveal variant="up" delay={90}>
+            <div className="tile">
+              <div className="badge">{t.mid}</div>
+              <p>{t.midP}</p>
+            </div>
+          </Reveal>
+          <Reveal variant="up" delay={180}>
+            <div className="tile">
+              <div className="badge">{t.long}</div>
+              <p>{t.longP}</p>
+            </div>
+          </Reveal>
         </div>
       </div>
     </section>
   );
 }
-

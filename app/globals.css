@@ -199,3 +199,19 @@ section + section { border-top: 1px solid var(--border); }
 .team-mark { display: inline-grid; place-items: center; width: 18px; height: 18px; margin-right: 6px; border-radius: 50%; background: radial-gradient(60% 60% at 50% 35%, color-mix(in oklab, var(--brand-strong) 30%, var(--accent)), transparent 70%); color: #fff; font-size: 10px; }
 .team-panel-split { display: grid; grid-template-columns: 1fr; gap: 16px; }
 @media (min-width: 720px) { .team-panel-split { grid-template-columns: 1.2fr 1fr; } }
+
+/* Scroll reveal animations */
+.reveal { opacity: 0; transform: translateY(14px); filter: blur(0.3px); transition: opacity .6s ease, transform .6s ease, filter .6s ease; will-change: opacity, transform; }
+.reveal.is-visible { opacity: 1; transform: none; filter: none; }
+
+/* Variants */
+.reveal.reveal-fade { transform: none; }
+.reveal.reveal-up { transform: translateY(16px); }
+.reveal.reveal-left { transform: translateX(16px); }
+.reveal.reveal-right { transform: translateX(-16px); }
+.reveal.reveal-zoom { transform: scale(0.96); }
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1 !important; transform: none !important; filter: none !important; transition: none !important; }
+}

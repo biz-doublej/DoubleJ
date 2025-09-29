@@ -1,3 +1,5 @@
+import Reveal from "@/components/Reveal";
+
 type Props = { locale: string };
 
 export default function ValuesPillars({ locale }: Props) {
@@ -36,20 +38,21 @@ export default function ValuesPillars({ locale }: Props) {
       <div className="container">
         <h2>{t.title}</h2>
         <div className="pillars">
-          {t.pillars.map((p) => (
-            <div key={p.title} className="pillar glass">
-              <div className="pillar-head">
-                <span className="pillar-icon" aria-hidden>
-                  {p.icon}
-                </span>
-                <strong>{p.title}</strong>
+          {t.pillars.map((p, i) => (
+            <Reveal key={p.title} variant="up" delay={i * 90}>
+              <div className="pillar glass">
+                <div className="pillar-head">
+                  <span className="pillar-icon" aria-hidden>
+                    {p.icon}
+                  </span>
+                  <strong>{p.title}</strong>
+                </div>
+                <p style={{ margin: 0 }}>{p.desc}</p>
               </div>
-              <p style={{ margin: 0 }}>{p.desc}</p>
-            </div>
+            </Reveal>
           ))}
         </div>
       </div>
     </section>
   );
 }
-
