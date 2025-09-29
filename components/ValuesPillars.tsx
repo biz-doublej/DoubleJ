@@ -12,7 +12,7 @@ export default function ValuesPillars({ locale }: Props) {
         pillars: [
           { icon: '🌍', title: 'Global', desc: '로컬 공감과 글로벌 스케일을 동시에 추구합니다.' },
           { icon: '⚡️', title: 'Innovation', desc: '빠르게 실험하고 학습하며, 안전하게 확장합니다.' },
-          { icon: '🛡️', title: 'Trust', desc: '프라이버ㄴ시 우선, 투명한 운영, 책임 있는 AI.' },
+          { icon: '🛡️', title: 'Trust', desc: '프라이버시 우선, 투명한 운영, 책임 있는 AI.' },
         ],
       }
     : zh

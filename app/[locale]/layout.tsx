@@ -5,6 +5,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { getDictionary } from "@/lib/i18n/dictionaries";
 import LiquidBackground from "@/components/LiquidBackground";
+import AutoRevealSections from "@/components/AutoRevealSections";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
@@ -35,7 +36,10 @@ export default async function RootLayout({
             labels={dict.nav}
             brand={dict.brand}
           />
-          <main>{children}</main>
+          <main>
+            {children}
+            <AutoRevealSections />
+          </main>
           <Footer legal={dict.footer.legal} />
         </div>
       </body>
